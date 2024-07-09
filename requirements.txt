@@ -1,0 +1,8 @@
+pandas==2.0.3
+numpy==1.25.2
+Pillow==9.4.0
+scikit-learn==1.2.2
+tensorflow==2.15.0
+seaborn==0.13.1
+opencv-python==4.8.0
+google-colab==0.0.1a2
