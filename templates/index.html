@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age and Gender Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function startPrediction() {
+            fetch('/start_prediction', { method: 'POST' })
+                .then(response => {
+                    console.log('Prediction started');
+                    const videoFeed = document.getElementById('video-feed');
+                    videoFeed.style.display = 'block';
+                    videoFeed.src = "{{ url_for('video_feed') }}";
+                    document.getElementById('start-button').style.display = 'none';
+                    document.getElementById('stop-button').style.display = 'inline-block';
+                })
+                .catch(error => console.error('Error starting prediction:', error));
+        }
+
+        function stopPrediction() {
+            document.getElementById('video-feed').style.display = 'none';
+            document.getElementById('start-button').style.display = 'inline-block';
+            document.getElementById('stop-button').style.display = 'none';
+            fetch('/stop_prediction', { method: 'POST' })
+                .then(response => console.log('Prediction stopped'))
+                .catch(error => console.error('Error stopping prediction:', error));
+        }
+    </script>
+</head>
+<body>
+    <div id="video-container">
+        <h1>Real-Time Age and Gender Prediction</h1>
+        <button id="start-button" onclick="startPrediction()" style="display: inline-block;">Start Prediction</button>
+        <button id="stop-button" onclick="stopPrediction()" style="display: none;">Stop Prediction</button>
+        <br><br>
+        <img id="video-feed" style="display: none; width: 100%; height: auto; margin-top: 20px;">
+    </div>
+</body>
+</html>
