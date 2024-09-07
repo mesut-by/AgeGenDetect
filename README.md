@@ -1,26 +1,32 @@
 # AgeGenDetect
 
-## Project Description
+**Project Description:**
 
-**AgeGenDetect** is a project designed to detect the age and gender of individuals using a camera. This project leverages TensorFlow for creating age and gender detection models, while OpenCV is utilized to process and detect faces from the camera feed and deliver the results to the user in real time.
+AgeGenDetect is a project aimed at detecting the age and gender of individuals using a camera. This project is developed using TensorFlow and OpenCV. TensorFlow is used for creating age and gender detection models, while OpenCV is used to detect the person in front of the camera and deliver the results to the user.
 
-## Technologies Used
+**Technologies Used:**
 
-- **Python**: The primary programming language used for this project.
-- **TensorFlow**: Employed for creating and training the age and gender detection models.
-- **OpenCV**: Utilized for processing images and detecting faces from the camera.
-- **Kaggle API**: Used for downloading the UTKFace dataset required for training.
+- **Python**: The main programming language for coding the project.
+- **TensorFlow**: Used for creating and training age and gender detection models.
+- **OpenCV**: Used for processing and detecting images from the camera.
+- **Kaggle API**: Used for downloading the UTKFace dataset.
 
-## Dataset
+**Running the Project:**
 
-The project uses the UTKFace dataset, obtained from Kaggle, as it provides crucial age and gender information for training. The UTKFace dataset is copyrighted by its original authors. More information can be found [here](https://www.kaggle.com/datasets/jangedoo/utkface-new).
+The models required for the project are already available in the `models` folder. You can directly use the `camera.ipynb` notebook to run the project. If you want to make changes to the models, you should use the `build_models.ipynb` notebook in the `notebooks` folder.
 
-### Setting Up the Dataset
+> **Note:** If you make any changes to the model paths, don't forget to update the paths in the `camera.ipynb` notebook.
 
-Follow these steps to download the dataset used in this project:
+**Dataset:**
+
+The project uses the UTKFace dataset obtained from Kaggle. This dataset was chosen because it contains age and gender information. The UTKFace dataset is copyrighted by the original authors, and you can find more information at [this link](https://www.kaggle.com/datasets/jangedoo/utkface-new).
+
+**Setting Up the Dataset:**
+
+Follow these steps to download the dataset used in the project:
 
 1. Obtain your Kaggle API key and place the `kaggle.json` file in the root directory of the project.
-2. Run the following commands to download and set up the dataset:
+2. Run the following commands to download the dataset:
 
     ```python
     from google.colab import files
@@ -34,52 +40,14 @@ Follow these steps to download the dataset used in this project:
     !unzip utkface-new.zip -d data/utkface
     ```
 
-## Model Training and Usage
+**Model Training and Usage:**
 
-The models required for this project are pre-trained and available in the `models` folder. If you wish to modify the models or retrain them, you can use the `building_models.ipynb` notebook located in the `notebooks` folder. These TensorFlow models are employed to detect the age and gender of individuals based on images captured from the camera.
+The models trained with TensorFlow are saved in the `models` folder for easy access and usage. These models are used to detect the age and gender of individuals in images captured from the camera.
 
-## Running the Project
+**Contributing:**
 
-You can run this project using Docker for a streamlined setup and environment consistency.
+If you would like to contribute, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-### Docker Setup
-
-1. **Build the Docker Image:**
-
-   ```bash
-   docker build -t age-gender-prediction-app .
-   ```
-
-2. **Run the Docker Container:**
-
-   ```bash
-   docker run -p 5000:5000 age-gender-prediction-app
-   ```
-
-   After running the above command, the application will be accessible at `http://localhost:5000`.
-
-### Testing the Application
-
-Once the Docker container is running, open your web browser and navigate to:
-
-```
-http://localhost:5000
-```
-
-The application will use your camera to detect faces and predict the age and gender of the detected individuals in real-time.
-
-## Project Web Version
-
-You can also explore the project directly on my website, where the live version is hosted. Visit [this link](http://www.mesutby-ai.com/) to view and test the project online.
-
-## Contributing
-
-If you would like to contribute to the project, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
-
-## License
+**License:**
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-This README file is now concise, focusing on the project's purpose, how to set it up, and how to run it using Docker. It also directs users to your website for further exploration and testing.
