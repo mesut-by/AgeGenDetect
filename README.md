@@ -2,31 +2,47 @@
 
 **Project Description:**
 
-AgeGenDetect is a project aimed at detecting the age and gender of individuals using a camera. This project is developed using TensorFlow and OpenCV. TensorFlow is used for creating age and gender detection models, while OpenCV is used to detect the person in front of the camera and deliver the results to the user.
+AgeGenDetect is a project designed to predict the age and gender of individuals based on images captured from a camera. This project was developed using TensorFlow and OpenCV. TensorFlow is used to create and train the models for age and gender detection, while OpenCV is used to detect the individual and display the results to the user.
 
 **Technologies Used:**
 
-- **Python**: The main programming language for coding the project.
-- **TensorFlow**: Used for creating and training age and gender detection models.
-- **OpenCV**: Used for processing and detecting images from the camera.
-- **Kaggle API**: Used for downloading the UTKFace dataset.
+- **Python**: The primary programming language used to develop the project.
+- **TensorFlow**: Used to create and train models for age and gender detection.
+- **OpenCV**: Used to process and detect images captured from the camera.
+- **Flask**: Used to create the web interface and handle user interactions.
+- **Kaggle API**: Used to download the UTKFace dataset.
 
-**Running the Project:**
+## Setup and Running:
 
-The models required for the project are already available in the `models` folder. You can directly use the `camera.ipynb` notebook to run the project. If you want to make changes to the models, you should use the `build_models.ipynb` notebook in the `notebooks` folder.
+### Requirements:
 
-> **Note:** If you make any changes to the model paths, don't forget to update the paths in the `camera.ipynb` notebook.
+1. Python 3.10.0 or above.
+2. The following Python packages, which are included in the `requirements.txt` file:
+   - Flask
+   - TensorFlow
+   - OpenCV
+   - Numpy
 
-**Dataset:**
+### Steps:
 
-The project uses the UTKFace dataset obtained from Kaggle. This dataset was chosen because it contains age and gender information. The UTKFace dataset is copyrighted by the original authors, and you can find more information at [this link](https://www.kaggle.com/datasets/jangedoo/utkface-new).
+1. Clone the project:
 
-**Setting Up the Dataset:**
+    ```bash
+    git clone https://github.com/username/agegendetect.git
+    cd agegendetect
+    ```
 
-Follow these steps to download the dataset used in the project:
+2. Install the requirements:
 
-1. Obtain your Kaggle API key and place the `kaggle.json` file in the root directory of the project.
-2. Run the following commands to download the dataset:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Download Models and Dataset:**
+
+   The models used in the project are pre-trained and available in the `models` folder. If you want to train your own models, you can use the `building_models.ipynb` notebook.
+
+   To download the UTKFace dataset, follow these steps:
 
     ```python
     from google.colab import files
@@ -40,14 +56,33 @@ Follow these steps to download the dataset used in the project:
     !unzip utkface-new.zip -d data/utkface
     ```
 
-**Model Training and Usage:**
+4. **Run the Project:**
 
-The models trained with TensorFlow are saved in the `models` folder for easy access and usage. These models are used to detect the age and gender of individuals in images captured from the camera.
+    To run the Flask server, use the following command:
 
-**Contributing:**
+    ```bash
+    python app.py
+    ```
 
-If you would like to contribute, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+5. Open your browser and navigate to [http://localhost:5000](http://localhost:5000) to use the project.
 
-**License:**
+### How to Use the Project:
+
+- **Age and Gender Prediction via Camera:**
+    - The project captures video from your camera and predicts the age and gender every 5 seconds.
+    - Click the "Start Prediction" button to begin the prediction process.
+    - Click the "Stop Prediction" button to stop the camera and the prediction process.
+    - The prediction results will be displayed on the screen.
+
+**Training Your Own Models:**
+
+- To retrain the age and gender models, use the `building_models.ipynb` notebook.
+- The models will be saved in the `models` folder in `.keras` format.
+  
+### Contributing:
+
+If you wish to contribute to this project, please review the [CONTRIBUTING.md](CONTRIBUTING.md) file first.
+
+### License:
 
 This project is licensed under the [MIT License](LICENSE).
