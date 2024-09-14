@@ -31,6 +31,13 @@ AgeGenDetect is a project designed to predict the age and gender of individuals 
     git clone https://github.com/username/agegendetect.git
     cd agegendetect
     ```
+### Additional Step: Creating a Virtual Environment (Recommended)
+-  After cloning the project, create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # For Linux and MacOS
+   venv\Scripts\activate  # For Windows
+   ```
 
 2. Install the requirements:
 
