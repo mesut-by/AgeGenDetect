@@ -33,6 +33,10 @@ click==8.1.7
 colorama==0.4.6
     # via click
 flask==3.0.3
+    # via
+    #   -r requirements.in
+    #   flask-cors
+flask-cors==5.0.0
     # via -r requirements.in
 flatbuffers==24.3.25
     # via
@@ -160,7 +164,7 @@ tensorboard-data-server==0.7.2
     #   tensorboard
 tensorflow==2.17.0
     # via -r requirements.in
-# tensorflow-intel==2.17.0
+tensorflow-intel==2.17.0
     # via tensorflow
 tensorflow-io-gcs-filesystem==0.31.0
     # via
