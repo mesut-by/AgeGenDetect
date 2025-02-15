@@ -47,7 +47,7 @@ AgeGenDetect is a project designed to predict the age and gender of individuals 
 
 3. **Download Models and Dataset:**
 
-   The models used in the project are pre-trained and available in the `models` folder. If you want to train your own models, you can use the `building_models.ipynb` notebook.
+   The models used in the project are pre-trained and available in the `models` folder. If you want to train your own models, you can use the `ing_models.ipynb` notebook.
 
    To download the UTKFace dataset, follow these steps:
 
@@ -83,7 +83,7 @@ AgeGenDetect is a project designed to predict the age and gender of individuals 
 
 **Training Your Own Models:**
 
-- To retrain the age and gender models, use the `building_models.ipynb` notebook.
+- To retrain the age and gender models, use the `build_models.ipynb` notebook.
 - The models will be saved in the `models` folder in `.keras` format.
   
 ### Contributing:
