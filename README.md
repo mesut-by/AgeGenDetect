@@ -28,7 +28,7 @@ AgeGenDetect is a project designed to predict the age and gender of individuals 
 1. Clone the project:
 
     ```bash
-    git clone https://github.com/username/agegendetect.git
+    git clone https://github.com/mesut-by/agegendetect.git
     cd agegendetect
     ```
 ### Additional Step: Creating a Virtual Environment (Recommended)
